@@ -1,65 +1,136 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CTAButton } from "@/components/cta-button";
+import { PageSection } from "@/components/page-section";
+import { ProjectCard } from "@/components/project-card";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { ServiceCard } from "@/components/service-card";
+import { homeFeaturedProjects, homeServices, differentiators } from "@/lib/site-data";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <section className="border-b border-white/20">
+        <div className="mx-auto flex min-h-[calc(100svh-4.5rem)] w-full max-w-7xl flex-col justify-center gap-14 px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:items-end">
+            <Reveal className="space-y-8">
+              <p className="text-xs uppercase tracking-[0.32em] text-white/70">
+                Crafted spaces. Considered delivery.
+              </p>
+              <h1 className="max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.04em] text-balance italic sm:text-6xl lg:text-8xl">
+                Maestro Built Constructions creates enduring spaces with quiet precision.
+              </h1>
+            </Reveal>
+            <Reveal delay={140} className="space-y-8 lg:max-w-md lg:justify-self-end">
+              <p className="text-base leading-8 text-white/80 sm:text-lg">
+                We deliver custom homes, major renovations, extensions, and commercial builds with disciplined project management and a premium standard of finish.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <CTAButton href="/projects">View Projects</CTAButton>
+                <CTAButton href="/contact" variant="secondary">
+                  Request a Quote
+                </CTAButton>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <PageSection className="border-b border-white/20">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <SectionHeading
+            eyebrow="Company"
+            title="Built on craftsmanship, carried by dependable execution."
+            description="Our work is shaped by measured detailing, clear communication, and a calm, professional process from planning through handover."
+          />
+          <div className="grid gap-8 text-sm leading-7 text-white/80 sm:grid-cols-2 sm:text-base">
+            <p className="animate-fade-up">
+              Maestro Built Constructions partners closely with homeowners, developers, and businesses to deliver spaces that feel resolved, functional, and enduring.
+            </p>
+            <p className="animate-fade-up-delayed">
+              Every project is coordinated with the same priorities: thoughtful sequencing, trusted trades, transparent reporting, and a finish standard that reflects the brief.
+            </p>
+          </div>
+        </div>
+      </PageSection>
+
+      <PageSection className="border-b border-white/20">
+        <SectionHeading
+          eyebrow="Services"
+          title="Construction services shaped for quality-focused clients."
+          description="A concise service offering, structured to support projects from early planning through final detailing."
+          align="center"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="mt-12 grid gap-px bg-white/20 sm:grid-cols-2 xl:grid-cols-3">
+          {homeServices.map((service, index) => (
+            <ServiceCard key={service.title} service={service} index={index} />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </PageSection>
+
+      <PageSection className="border-b border-white/20">
+        <div className="flex items-end justify-between gap-6">
+          <SectionHeading
+            eyebrow="Selected Work"
+            title="Featured projects with a refined, practical point of view."
+            description="Placeholder projects arranged to be easy to replace with live case studies later."
+          />
+          <Link
+            href="/projects"
+            className="hidden border-b border-white pb-1 text-sm text-white transition-opacity hover:opacity-60 md:block"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            See all projects
+          </Link>
         </div>
-      </main>
-    </div>
+        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+          {homeFeaturedProjects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
+          ))}
+        </div>
+      </PageSection>
+
+      <PageSection className="border-b border-white/20">
+        <SectionHeading
+          eyebrow="Why Maestro"
+          title="A considered approach to quality, coordination, and trust."
+          description="Our value lies in the details that keep projects moving well and finishing properly."
+        />
+        <div className="mt-12 grid gap-px bg-white/20 md:grid-cols-2">
+          {differentiators.map((item, index) => (
+            <article
+              key={item.title}
+              className="bg-black/10 p-8"
+              style={{ animationDelay: `${index * 90}ms` }}
+            >
+              <h3 className="text-xl tracking-[-0.02em]">{item.title}</h3>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-white/80 sm:text-base">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </PageSection>
+
+      <PageSection>
+        <div className="border border-[0.5px] border-white/25 px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+            <div>
+              <p className="text-xs uppercase tracking-[0.32em] text-white/70">
+                Start a Conversation
+              </p>
+              <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.04em] italic sm:text-5xl">
+                Planning a new build, renovation, or commercial project?
+              </h2>
+            </div>
+            <div className="space-y-6">
+              <p className="max-w-lg text-sm leading-7 text-white/80 sm:text-base">
+                Share your scope and timeframe, and we will prepare a considered next step for your project.
+              </p>
+              <CTAButton href="/contact">Request a Quote</CTAButton>
+            </div>
+          </div>
+        </div>
+      </PageSection>
+    </>
   );
 }
