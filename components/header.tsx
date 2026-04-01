@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { CTAButton } from "@/components/cta-button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -47,9 +46,6 @@ export function Header() {
               </Link>
             );
           })}
-          <CTAButton href="/contact" size="sm" variant="light">
-            Request a Quote
-          </CTAButton>
         </nav>
 
         <button
@@ -84,16 +80,6 @@ export function Header() {
                 </Link>
               );
             })}
-            <div className="pt-4">
-              <CTAButton
-                href="/contact"
-                className="w-full justify-center"
-                onClick={() => setIsOpen(false)}
-                variant="light"
-              >
-                Request a Quote
-              </CTAButton>
-            </div>
           </nav>
         </div>
       ) : null}
