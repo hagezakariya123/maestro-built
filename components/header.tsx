@@ -50,13 +50,17 @@ export function Header() {
 
         <button
           type="button"
-          className="flex items-center gap-3 text-sm md:hidden"
+          className="flex items-center gap-3 text-sm text-stone-950 md:hidden"
           onClick={() => setIsOpen((open) => !open)}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
         >
           <span>Menu</span>
-          <span className="block h-px w-5 bg-stone-950" />
+          <span className="flex flex-col gap-1.5" aria-hidden="true">
+            <span className="block h-px w-5 bg-stone-950" />
+            <span className="block h-px w-5 bg-stone-950" />
+            <span className="block h-px w-5 bg-stone-950" />
+          </span>
         </button>
       </div>
 
