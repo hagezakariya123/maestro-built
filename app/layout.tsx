@@ -54,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${instrumentSerif.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-[#DDBB81] text-white">
+      <body className="min-h-full bg-[#101020] text-white">
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

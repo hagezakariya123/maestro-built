@@ -109,7 +109,7 @@ export function ContactForm() {
         Submit Enquiry
       </button>
       {isSubmitted ? (
-        <p className="border border-[0.5px] border-white/25 bg-black/10 px-4 py-3 text-sm leading-7 text-white/85" aria-live="polite">
+        <p className="border border-[0.5px] border-white/25 bg-white/[0.03] px-4 py-3 text-sm leading-7 text-white/85" aria-live="polite">
           Thank you. Your enquiry has been received and a team member will be in touch shortly.
         </p>
       ) : null}

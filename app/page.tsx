@@ -61,7 +61,7 @@ export default function HomePage() {
           description="A concise service offering, structured to support projects from early planning through final detailing."
           align="center"
         />
-        <div className="mt-12 grid gap-px bg-white/20 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid gap-px bg-white/12 sm:grid-cols-2 xl:grid-cols-3">
           {homeServices.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
@@ -95,11 +95,11 @@ export default function HomePage() {
           title="A considered approach to quality, coordination, and trust."
           description="Our value lies in the details that keep projects moving well and finishing properly."
         />
-        <div className="mt-12 grid gap-px bg-white/20 md:grid-cols-2">
+        <div className="mt-12 grid gap-px bg-white/12 md:grid-cols-2">
           {differentiators.map((item, index) => (
             <article
               key={item.title}
-              className="bg-black/10 p-8"
+              className="bg-white/[0.03] p-8"
               style={{ animationDelay: `${index * 90}ms` }}
             >
               <h3 className="text-xl tracking-[-0.02em]">{item.title}</h3>

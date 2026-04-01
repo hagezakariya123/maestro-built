@@ -20,11 +20,11 @@ export default function ServicesPage() {
       />
 
       <PageSection>
-        <div className="grid gap-px bg-white/20">
+        <div className="grid gap-px bg-white/12">
           {detailedServices.map((service, index) => (
             <article
               key={service.title}
-              className="grid gap-8 bg-black/10 px-6 py-8 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:px-12 lg:py-10"
+              className="grid gap-8 bg-white/[0.03] px-6 py-8 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:px-12 lg:py-10"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="space-y-3">

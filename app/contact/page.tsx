@@ -26,8 +26,8 @@ export default function ContactPage() {
       />
 
       <PageSection>
-        <div className="grid gap-px bg-white/20 lg:grid-cols-[0.7fr_1.3fr]">
-          <section className="bg-black/10 p-8 lg:p-12">
+        <div className="grid gap-px bg-white/12 lg:grid-cols-[0.7fr_1.3fr]">
+          <section className="bg-white/[0.03] p-8 lg:p-12">
             <h2 className="text-3xl tracking-[-0.03em]">Contact Details</h2>
             <p className="mt-4 max-w-md text-sm leading-7 text-white/80 sm:text-base">
               Placeholder details are arranged here so the page can be updated quickly once final business contact information is ready.
@@ -43,7 +43,7 @@ export default function ContactPage() {
               ))}
             </dl>
           </section>
-          <section className="bg-black/10 p-8 lg:p-12">
+          <section className="bg-white/[0.03] p-8 lg:p-12">
             <div className="mb-8">
               <h2 className="text-3xl tracking-[-0.03em]">Request a Quote</h2>
               <p className="mt-4 max-w-xl text-sm leading-7 text-white/80 sm:text-base">

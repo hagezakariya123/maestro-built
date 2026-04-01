@@ -47,11 +47,11 @@ export default function AboutPage() {
           title="The standards that shape every project."
           description="A concise framework for how we manage quality, communication, and delivery."
         />
-        <div className="mt-12 grid gap-px bg-white/20 md:grid-cols-3">
+        <div className="mt-12 grid gap-px bg-white/12 md:grid-cols-3">
           {companyPrinciples.map((principle, index) => (
             <article
               key={principle.title}
-              className="bg-black/10 p-8"
+              className="bg-white/[0.03] p-8"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <h3 className="text-xl tracking-[-0.02em]">{principle.title}</h3>
@@ -69,11 +69,11 @@ export default function AboutPage() {
           title="A minimal view of our working priorities."
           description="Placeholder figures that can be replaced with live business metrics later."
         />
-        <div className="mt-12 grid gap-px bg-white/20 sm:grid-cols-3">
+        <div className="mt-12 grid gap-px bg-white/12 sm:grid-cols-3">
           {companyStats.map((stat, index) => (
             <div
               key={stat.label}
-              className="bg-black/10 p-8"
+              className="bg-white/[0.03] p-8"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <p className="font-serif text-5xl tracking-[-0.05em] italic">{stat.value}</p>

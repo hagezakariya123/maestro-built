@@ -11,7 +11,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <Reveal delay={index * 90}>
       <article className="group">
-        <div className="overflow-hidden border border-[0.5px] border-white/20 bg-black/10">
+        <div className="overflow-hidden border border-[0.5px] border-white/20 bg-white/[0.03]">
           <Image
             src={project.image}
             alt={project.title}
